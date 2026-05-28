@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="AddShard">+ Hinzufügen</sys:String>
+    <sys:String x:Key="DialogTitle_Add">Shard hinzufügen</sys:String>
+    <sys:String x:Key="DialogTitle_Edit">Shard bearbeiten</sys:String>
+    <sys:String x:Key="LabelName">Name:</sys:String>
+    <sys:String x:Key="LabelPath">Pfad:</sys:String>
+    <sys:String x:Key="LabelArguments">Arguments:</sys:String>
+    <sys:String x:Key="LabelInternal">Internal</sys:String>
+    <sys:String x:Key="Cancel">Abbrechen</sys:String>
+    <sys:String x:Key="BrowseDescription">URU Shard-Verzeichnis auswählen</sys:String>
+    <sys:String x:Key="ErrorNoName">Bitte einen Namen eingeben.</sys:String>
+    <sys:String x:Key="ErrorNoPath">Bitte einen Pfad eingeben.</sys:String>
+    <sys:String x:Key="ErrorFileNotFound">Datei nicht gefunden:</sys:String>
+    <sys:String x:Key="DeleteShard">Löschen</sys:String>
+    <sys:String x:Key="DeleteConfirm">Möchtest du diesen Shard wirklich löschen?</sys:String>
+</ResourceDictionary>

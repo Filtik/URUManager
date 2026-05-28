@@ -1,0 +1,17 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Runtime data (user-specific, not part of the project)
+shards.json
+
+# Logs & temp
+*.log
+*.tmp
