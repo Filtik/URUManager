@@ -57,4 +57,4 @@ Language preference is stored in the Windows Registry under `HKEY_CURRENT_USER\S
 ## License
 
 This project is licensed under the **GNU General Public License v3.0**.  
-See [LICENSE](LICENSE.txt) for details.
+See [LICENSE](LICENSE) for details.
