@@ -17,7 +17,7 @@ A universal launcher and manager for [Myst Online: URU Live](https://mystonline.
 
 ## Requirements
 
-- [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) (pre-installed on Windows 10/11)
+- [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48)
 
 ## Build
 
