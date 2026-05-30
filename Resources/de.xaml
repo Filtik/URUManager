@@ -8,6 +8,7 @@
     <sys:String x:Key="LabelPath">Pfad:</sys:String>
     <sys:String x:Key="LabelArguments">Arguments:</sys:String>
     <sys:String x:Key="LabelInternal">Internal</sys:String>
+    <sys:String x:Key="LabelDeleteTos">TOS.txt vor dem Start löschen</sys:String>
     <sys:String x:Key="Cancel">Abbrechen</sys:String>
     <sys:String x:Key="BrowseDescription">URU Shard-Verzeichnis auswählen</sys:String>
     <sys:String x:Key="ErrorNoName">Bitte einen Namen eingeben.</sys:String>

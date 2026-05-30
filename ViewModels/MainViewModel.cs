@@ -57,6 +57,7 @@ namespace URUManager.ViewModels
                     shard.Path = dialog.Result.Path;
                     shard.IsInternal = dialog.Result.IsInternal;
                     shard.Arguments = dialog.Result.Arguments;
+                    shard.DeleteTos = dialog.Result.DeleteTos;
                 }
                 Save();
             }
@@ -66,6 +67,13 @@ namespace URUManager.ViewModels
         {
             string exe = shard.IsInternal ? "plClient.exe" : "URULauncher.exe";
             string exePath = Path.Combine(shard.Path, exe);
+
+            if (shard.DeleteTos)
+            {
+                string tosPath = Path.Combine(shard.Path, "TOS.txt");
+                if (File.Exists(tosPath))
+                    File.Delete(tosPath);
+            }
 
             if (!File.Exists(exePath))
             {

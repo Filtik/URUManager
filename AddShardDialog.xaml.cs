@@ -20,6 +20,7 @@ namespace URUManager
             PathBox.Text = existing.Path;
             ArgumentsBox.Text = existing.Arguments ?? "";
             InternalCheck.IsChecked = existing.IsInternal;
+            DeleteTosCheck.IsChecked = existing.DeleteTos;
             DeleteButton.Visibility = Visibility.Visible;
         }
 
@@ -57,7 +58,8 @@ namespace URUManager
                 Name = NameBox.Text.Trim(),
                 Path = PathBox.Text.Trim(),
                 IsInternal = InternalCheck.IsChecked == true,
-                Arguments = ArgumentsBox.Text.Trim()
+                Arguments = ArgumentsBox.Text.Trim(),
+                DeleteTos = DeleteTosCheck.IsChecked == true
             };
             DialogResult = true;
         }

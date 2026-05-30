@@ -1,7 +1,7 @@
 <Window x:Class="URUManager.AddShardDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="{DynamicResource DialogTitle_Add}" Height="265" Width="500"
+        Title="{DynamicResource DialogTitle_Add}" Height="300" Width="500"
         WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
         ShowInTaskbar="False" Background="#FF3C3C3C" Foreground="White">
     <Grid Margin="16">
@@ -50,6 +50,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="8"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -77,8 +79,12 @@
         <CheckBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" x:Name="InternalCheck"
                   Content="{DynamicResource LabelInternal}" VerticalAlignment="Center"/>
 
+        <!-- Delete TOS -->
+        <CheckBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" x:Name="DeleteTosCheck"
+                  Content="{DynamicResource LabelDeleteTos}" VerticalAlignment="Center"/>
+
         <!-- Buttons -->
-        <Grid Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,8,0,0">
+        <Grid Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,8,0,0">
             <Button x:Name="DeleteButton" Content="{DynamicResource DeleteShard}" Width="80"
                     HorizontalAlignment="Left" Visibility="Collapsed" Padding="8,4"
                     Style="{StaticResource DeleteButtonStyle}"

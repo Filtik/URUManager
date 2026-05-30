@@ -8,6 +8,7 @@
     <sys:String x:Key="LabelPath">Path:</sys:String>
     <sys:String x:Key="LabelArguments">Arguments:</sys:String>
     <sys:String x:Key="LabelInternal">Internal</sys:String>
+    <sys:String x:Key="LabelDeleteTos">Delete TOS.txt before launch</sys:String>
     <sys:String x:Key="Cancel">Cancel</sys:String>
     <sys:String x:Key="BrowseDescription">Select URU shard directory</sys:String>
     <sys:String x:Key="ErrorNoName">Please enter a name.</sys:String>

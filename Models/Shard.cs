@@ -10,6 +10,7 @@ namespace URUManager.Models
         private string _path;
         private bool _isInternal;
         private string _arguments;
+        private bool _deleteTos;
 
         [DataMember]
         public string Name
@@ -37,6 +38,13 @@ namespace URUManager.Models
         {
             get { return _arguments; }
             set { _arguments = value; OnPropertyChanged("Arguments"); }
+        }
+
+        [DataMember]
+        public bool DeleteTos
+        {
+            get { return _deleteTos; }
+            set { _deleteTos = value; OnPropertyChanged("DeleteTos"); }
         }
 
         public string DisplayName

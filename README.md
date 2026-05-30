@@ -9,6 +9,7 @@ A universal launcher and manager for [Myst Online: URU Live](https://mystonline.
 - **Multi-shard management** – Add, edit and remove any number of shards
 - **One-click launch** – Start `URULauncher.exe` or `plClient.exe` (Internal mode) per shard
 - **Custom arguments** – Pass command-line arguments to the launcher
+- **TOS.txt deletion** – Optionally delete `TOS.txt` automatically before each launch
 - **Exe icon display** – Automatically loads the icon from the shard's executable
 - **Responsive grid** – Tiles reflow automatically as you resize the window
 - **Localization** – English and German, switchable at runtime; preference is saved
@@ -33,7 +34,10 @@ Output: `bin\Debug\URUManager.exe` or `bin\Release\URUManager.exe`
 1. Click **+ Add Shard** (or **+ Hinzufügen**)
 2. Enter a name, the path to the shard folder, and optional arguments
 3. Check **Internal** if the shard should be started with `plClient.exe`
-4. Click **OK**
+4. Check **Delete TOS.txt before launch** if needed
+5. Click **OK**
+
+![Add Shard Dialog](docs/Shard.png)
 
 ### Launching a shard
 Click the **Start** button on any shard tile.
