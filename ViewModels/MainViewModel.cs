@@ -94,6 +94,15 @@ namespace URUManager.ViewModels
             });
         }
 
+        public void MoveShard(Shard source, Shard target)
+        {
+            int sourceIdx = Shards.IndexOf(source);
+            int targetIdx = Shards.IndexOf(target);
+            if (sourceIdx < 0 || targetIdx < 0) return;
+            Shards.Move(sourceIdx, targetIdx);
+            Save();
+        }
+
         private void Save()
         {
             _storage.Save(new List<Shard>(Shards));

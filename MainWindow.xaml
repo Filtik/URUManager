@@ -200,7 +200,12 @@
                         <Border Margin="4" Padding="8" CornerRadius="6"
                                 Background="#CC111111"
                                 BorderThickness="1" BorderBrush="#44FFFFFF"
-                                VerticalAlignment="Top">
+                                VerticalAlignment="Top"
+                                AllowDrop="True"
+                                PreviewMouseLeftButtonDown="Card_MouseLeftButtonDown"
+                                MouseMove="Card_MouseMove"
+                                DragOver="Card_DragOver"
+                                Drop="Card_Drop">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30"/>

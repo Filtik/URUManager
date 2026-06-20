@@ -4,9 +4,11 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using URUManager.Models;
 using URUManager.Services;
 using URUManager.ViewModels;
 
@@ -15,6 +17,8 @@ namespace URUManager
     public partial class MainWindow : Window
     {
         private bool _languageInitializing;
+        private Point _dragStartPoint;
+        private Shard _dragShard;
 
         public MainWindow()
         {
@@ -75,6 +79,58 @@ namespace URUManager
             var item = LanguageCombo.SelectedItem as ComboBoxItem;
             if (item != null)
                 LanguageManager.Apply((string)item.Tag);
+        }
+
+        private void Card_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (IsDescendantOfButton(e.OriginalSource as DependencyObject))
+            {
+                _dragShard = null;
+                return;
+            }
+            _dragStartPoint = e.GetPosition(null);
+            _dragShard = (sender as FrameworkElement)?.DataContext as Shard;
+        }
+
+        private void Card_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton != MouseButtonState.Pressed || _dragShard == null) return;
+
+            var pos = e.GetPosition(null);
+            var diff = pos - _dragStartPoint;
+            if (Math.Abs(diff.X) < SystemParameters.MinimumHorizontalDragDistance &&
+                Math.Abs(diff.Y) < SystemParameters.MinimumVerticalDragDistance) return;
+
+            var border = sender as Border;
+            if (border != null)
+                DragDrop.DoDragDrop(border, _dragShard, DragDropEffects.Move);
+
+            _dragShard = null;
+        }
+
+        private void Card_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effects = e.Data.GetDataPresent(typeof(Shard)) ? DragDropEffects.Move : DragDropEffects.None;
+            e.Handled = true;
+        }
+
+        private void Card_Drop(object sender, DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(typeof(Shard))) return;
+            var sourceShard = e.Data.GetData(typeof(Shard)) as Shard;
+            var targetShard = (sender as FrameworkElement)?.DataContext as Shard;
+            if (sourceShard == null || targetShard == null || ReferenceEquals(sourceShard, targetShard)) return;
+            (DataContext as MainViewModel)?.MoveShard(sourceShard, targetShard);
+        }
+
+        private static bool IsDescendantOfButton(DependencyObject element)
+        {
+            while (element != null)
+            {
+                if (element is Button) return true;
+                element = VisualTreeHelper.GetParent(element);
+            }
+            return false;
         }
 
         private void LoadBackground()
