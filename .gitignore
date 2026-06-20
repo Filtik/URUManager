@@ -18,3 +18,4 @@ shards.json
 # Logs & temp
 *.log
 *.tmp
+/publish
